@@ -1,60 +1,60 @@
-uppercase=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-symbols=['!','@','#','$','%','^','&','*','(',')','_','-',',','.']
-lowercase =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'm', 'n', 'o', 'p', 'q','r', 's', 't', 'u', 'v', 'w', 'x', 'y','z'] 
+capchar=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+dig = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+spchar=['!','@','#','$','%','^','&','*','(',')','_','-',',','.']
+smallchar=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'm', 'n', 'o', 'p', 'q','r', 's', 't', 'u', 'v', 'w', 'x', 'y','z'] 
 import random
 passlen=int(input("Enter the desired length of password : "))
 capans=str(input("Are CAPITAL Alphabets allowed ? (Y/N) : "))
 smallans=str(input("Are lowercase Alphabets allowed ? (Y/N) : "))
-numbers=str(input("Are Digits allowed ? (Y/N) : "))
+digans=str(input("Are Digits allowed ? (Y/N) : "))
 spans=str(input("Are Special Charecters allowed ? (Y/N) : "))
 print("Way 1 is meant for Minimal Resource Usage and Way 2 for more secure generation.")
 rep=input("Way 1 or Way 2 ? (1/2) : ")
-capans,smallans,numbers,spans=capans.title(),smallans.title(),numbers.title(),spans.title()
+capans,smallans,digans,spans=capans.title(),smallans.title(),digans.title(),spans.title()
 if capans=='Y':
      if smallans=='Y':
-          if numbers=='Y':
+          if digans=='Y':
                if spans=='Y':
-                    comblis=uppercase+numbers+symbols+lowercase 
+                    comblis=capchar+dig+spchar+smallchar
                else:
-                    comblis=uppercase+numbers+lowercase 
+                    comblis=capchar+dig+smallchar
           else :
                if spans=='Y':
-                    comblis=uppercase+symbols+lowercase 
+                    comblis=capchar+spchar+smallchar
                else:
-                    comblis=uppercase+lowercase 
+                    comblis=capchar+smallchar
      else:
-          if numbers=='Y':
+          if digans=='Y':
                if spans=='Y':
-                    comblis=uppercase+numbers+symbols
+                    comblis=capchar+dig+spchar
                else:
-                    comblis=uppercase+numbers
+                    comblis=capchar+dig
           else :
                if spans=='Y':
-                    comblis=uppercase+symbols
+                    comblis=capchar+spchar
                else:
-                    comblis=uppercase
+                    comblis=capchar
 else :
      if smallans=='Y':
-          if numbers=='Y':
+          if digans=='Y':
                if spans=='Y':
-                    comblis=numbers+symbols+lowercase 
+                    comblis=dig+spchar+smallchar
                else:
-                    comblis=numbers+lowercase 
+                    comblis=dig+smallchar
           else :
                if spans=='Y':
-                    comblis=symbols+lowercase 
+                    comblis=spchar+smallchar
                else:
-                    comblis=lowercase 
+                    comblis=smallchar
      else:
-          if numbers=='Y':
+          if digans=='Y':
                if spans=='Y':
-                    comblis=numbers+symbols
+                    comblis=dig+spchar
                else:
-                    comblis=numbers
+                    comblis=dig
           else :
                if spans=='Y':
-                    comblis=ar+symbols
+                    comblis=ar+spchar
                else:
                     print("Error, You denied the usage of all possible charecters")
                     quit()
